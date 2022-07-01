@@ -8,4 +8,6 @@ public class Role {
     private User user;
 
     private String permissions;
+
+
 }

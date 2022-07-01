@@ -1,18 +1,37 @@
 package br.com.rodpk.ticketcentralapi.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import br.com.rodpk.ticketcentralapi.to.enums.Level;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class Ticket {
+@Entity
+@Table(name = "ticket")
+@EqualsAndHashCode(callSuper = false)
+public class Ticket extends BaseModel {
     
 
     // all strings will be enums
-
-    private Integer id;
+    @Id 
+    @Column(name = "ticket_id") 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;   
     
-    private String level;
+    @Column(name = "level", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Level level;
 
-    private String requester; // requester - solicitante?
+
+    private User requester; // requester - solicitante?
 
     private String classification;
 
@@ -24,7 +43,7 @@ public class Ticket {
 
     private String subItem;
 
-    private String owner;
+    private User owner;
     
     private String deadline;
 

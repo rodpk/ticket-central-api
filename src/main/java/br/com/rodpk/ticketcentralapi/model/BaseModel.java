@@ -12,7 +12,6 @@ import lombok.Getter;
 @Getter
 @MappedSuperclass
 public class BaseModel {
-    
 
     LocalDateTime createdAt;
 
