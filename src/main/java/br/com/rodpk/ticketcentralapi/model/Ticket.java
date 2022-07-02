@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.rodpk.ticketcentralapi.to.enums.Level;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -28,20 +27,37 @@ public class Ticket extends BaseModel {
     
     @Column(name = "level", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Level level;
+    private String level;
 
 
     private User requester; // requester - solicitante?
 
-    private String classification;
+    // history
+        // requester should see change?
+        // time invested
+        // details
+        // owner
+        // receive updates?
+        // status - need one status that pause deadline
+        //
 
-    private String service;
+    
+    String location;
 
-    private String type;
+    //Team team;
 
-    private String item;
+    // each team has it's own services
 
-    private String subItem;
+    // each service has it's own activities
+
+    // each service has its own itens
+
+    // each item has its own subitens
+
+    // file(s)
+
+    // details
+
 
     private User owner;
     
