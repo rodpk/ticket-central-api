@@ -1,20 +1,37 @@
-package br.com.rodpk.ticketcentralapi.model;
+// package br.com.rodpk.ticketcentralapi.model;
 
-public class TicketHistory {
+// import javax.persistence.Column;
+// import javax.persistence.Entity;
+// import javax.persistence.Id;
+// import javax.persistence.Table;
 
+// import lombok.Data;
+
+// @Data
+// @Entity
+// @Table(name = "ticket_history")
+// public class TicketHistory {
+
+//     @Id
+//     @Column(name = "id")
+//     private Integer id;
     
-    Ticket ticket;
+//     @Column(name = "ticket_id")
+//     private Ticket ticket;
 
-    String owner;
+//     @Column(name = "owner_id")
+//     private User owner;
 
-    String details;
+//     @Column(name = "details")
+//     private String details;
 
-    String timeInvested;
+//     @Column(name = "owner_should_receive_update")
+//     private boolean receiveUpdates;
 
-    boolean receiveUpdates;
+//     @Column(name = "requester_should_see")
+//     private boolean requesterShouldSee;
 
-    boolean requesterShouldSee;
-
-    String status;
-}
+//     @Column(name = "status")
+//     private Status status;
+// }
 

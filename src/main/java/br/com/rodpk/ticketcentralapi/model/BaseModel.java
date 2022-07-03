@@ -13,8 +13,10 @@ import lombok.Getter;
 @MappedSuperclass
 public class BaseModel {
 
+    @Column(name = "created_at", columnDefinition = "TIMESTAMP", nullable = false)
     LocalDateTime createdAt;
 
+    @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
     LocalDateTime updatedAt;
 
     @Column(name = "active", nullable = false)
