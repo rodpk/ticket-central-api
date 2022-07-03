@@ -28,4 +28,14 @@ public class UserService {
     public User save(UserRequest request) {
         return repository.save(User.of(request));
     }
+
+    public User update(String id, UserRequest req) {
+        var user = repository.findById(UUID.fromString(id)).orElseThrow(() -> new RuntimeException("not found"));
+        user.setName(req.name());
+        user.setEmail(req.email());
+        user.setPassword(req.password());
+        user.setRole(req.role());
+        User savedUser = repository.save(user);
+        return savedUser;
+    }
 }
