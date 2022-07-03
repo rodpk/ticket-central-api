@@ -36,11 +36,11 @@ public class User {
     @Column(name = "role")
     private String role;
 
-    public static User of(UserRequest request) {
+    public static User of(UserRequest request, String encodedPass) {
         var user = new User();
         user.setName(request.name());
         user.setEmail(request.email());
-        user.setPassword(request.password());
+        user.setPassword(encodedPass);
         user.setRole(request.role());
 
         return user;
